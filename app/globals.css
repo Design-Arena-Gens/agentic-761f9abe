@@ -1,0 +1,124 @@
+:root {
+  color-scheme: dark;
+  font-family: "Poppins", "Segoe UI", sans-serif;
+  background: #05030f;
+  color: #f8f6ff;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+.page {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  padding: 4rem clamp(2rem, 3vw, 5rem);
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.glow {
+  position: absolute;
+  inset: -20% -10%;
+  background: radial-gradient(circle at 20% 20%, rgba(71, 255, 232, 0.25), transparent 45%),
+    radial-gradient(circle at 80% 20%, rgba(255, 105, 180, 0.35), transparent 45%),
+    radial-gradient(circle at 50% 80%, rgba(76, 201, 240, 0.3), transparent 60%);
+  filter: blur(60px);
+  z-index: -2;
+}
+
+.hero {
+  display: grid;
+  gap: clamp(2rem, 4vw, 4rem);
+  align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.text {
+  max-width: 520px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(71, 255, 232, 0.12);
+  color: #47ffe8;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 4vw, 3.6rem);
+  margin: 0;
+  line-height: 1.1;
+  color: #fef6ff;
+}
+
+p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(230, 225, 250, 0.82);
+}
+
+ul {
+  margin: 0;
+  padding-left: 1.4rem;
+  display: grid;
+  gap: 0.5rem;
+}
+
+li {
+  font-size: 0.95rem;
+  color: rgba(215, 238, 255, 0.8);
+}
+
+.scene {
+  width: min(640px, 100%);
+  border-radius: 22px;
+  background: linear-gradient(140deg, rgba(11, 17, 52, 0.88), rgba(2, 4, 14, 0.8));
+  box-shadow: 0 35px 90px rgba(10, 14, 24, 0.8),
+    0 0 40px rgba(71, 255, 232, 0.25),
+    inset 0 0 20px rgba(159, 52, 255, 0.15);
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+
+.scene:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 45px 120px rgba(8, 12, 22, 0.9),
+    0 0 50px rgba(71, 255, 232, 0.35),
+    inset 0 0 22px rgba(252, 176, 69, 0.25);
+}
+
+footer {
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(160, 190, 255, 0.5);
+}
+
+@media (max-width: 720px) {
+  .page {
+    padding: 3rem 1.5rem 2.5rem;
+  }
+
+  .scene {
+    border-radius: 18px;
+  }
+}
